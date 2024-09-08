@@ -32,6 +32,10 @@ public class Document {
         this.remplacer(debut, fin, partieMajuscules);
     }
 
+    public void effacer(int debut, int fin) {
+        this.remplacer(debut, fin, "");
+    }
+
     @Override
     public String toString() {
         return this.texte;

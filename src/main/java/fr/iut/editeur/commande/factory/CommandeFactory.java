@@ -1,6 +1,7 @@
 package fr.iut.editeur.commande.factory;
 
 import fr.iut.editeur.commande.*;
+import fr.iut.editeur.commande.invoker.CommandeEffacer;
 import fr.iut.editeur.commande.invoker.CommandeMajuscules;
 import fr.iut.editeur.commande.invoker.CommandeRemplacer;
 import fr.iut.editeur.document.Document;
@@ -23,6 +24,7 @@ public class CommandeFactory {
             case "ajouter" : return new CommandeAjouter(document, parameters);
             case "remplacer" : return new CommandeRemplacer(document, parameters);
             case "majuscules" : return new CommandeMajuscules(document, parameters);
+            case "effacer" : return new CommandeEffacer(document, parameters);
             default: return null;
         }
     }

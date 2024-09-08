@@ -3,25 +3,24 @@ package fr.iut.editeur.commande.invoker;
 import fr.iut.editeur.commande.CommandeDocument;
 import fr.iut.editeur.document.Document;
 
-public class CommandeMajuscules extends CommandeDocument {
 
-    public CommandeMajuscules(Document document, String[] parameters) {
+public class CommandeEffacer extends CommandeDocument {
+
+    public CommandeEffacer(Document document, String[] parameters) {
         super(document, parameters);
-
     }
 
-    @Override
-    public void executer()
-    {
+    public void executer() {
         if(parameters.length < 2) {
-            System.err.println("Format attendu : majuscules;debut;fin");
+            System.err.println("Format attendu : effacer;debut;fin");
             return;
         }
 
         int debut = Integer.parseInt(parameters[1]);
         int fin = Integer.parseInt(parameters[2]);
 
-        this.document.majuscules(debut, fin);
+        this.document.effacer(debut, fin);
         super.executer();
     }
+    //fonctionne à  merveille
 }
