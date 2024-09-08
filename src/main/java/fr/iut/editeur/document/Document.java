@@ -32,6 +32,11 @@ public class Document {
         this.remplacer(debut, fin, partieMajuscules);
     }
 
+    public void clear() {
+        this.texte = "";
+        this.texte += "bug à fixer";
+    }
+
     public void effacer(int debut, int fin) {
         this.remplacer(debut, fin, "");
     }
