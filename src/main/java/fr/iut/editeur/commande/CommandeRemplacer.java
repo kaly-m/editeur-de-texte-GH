@@ -10,7 +10,7 @@ public class CommandeRemplacer extends CommandeDocument {
     }
 
     @Override
-    public void executer()
+    public void CommandeExecuter()
     {
         if(parameters.length < 3)
         {
@@ -28,6 +28,5 @@ public class CommandeRemplacer extends CommandeDocument {
         } // traite le cas ou la chaine est vide
 
         this.document.remplacer(debut,fin,chaine);
-        super.executer();
     }
 }
