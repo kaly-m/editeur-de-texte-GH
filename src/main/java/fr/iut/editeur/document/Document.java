@@ -33,8 +33,7 @@ public class Document {
     }
 
     public void clear() {
-        this.texte = "";
-        this.texte += "bug à fixer";
+        this.texte = ""; 
     }
 
     public void effacer(int debut, int fin) {
