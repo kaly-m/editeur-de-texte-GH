@@ -1,9 +1,10 @@
 package fr.iut.editeur.commande.factory;
 
 import fr.iut.editeur.commande.*;
-import fr.iut.editeur.commande.invoker.CommandeEffacer;
-import fr.iut.editeur.commande.invoker.CommandeMajuscules;
-import fr.iut.editeur.commande.invoker.CommandeRemplacer;
+import fr.iut.editeur.commande.CommandeClear;
+import fr.iut.editeur.commande.CommandeEffacer;
+import fr.iut.editeur.commande.CommandeMajuscules;
+import fr.iut.editeur.commande.CommandeRemplacer;
 import fr.iut.editeur.document.Document;
 
 public class CommandeFactory {
@@ -25,7 +26,7 @@ public class CommandeFactory {
             case "remplacer" : return new CommandeRemplacer(document, parameters);
             case "majuscules" : return new CommandeMajuscules(document, parameters);
             case "effacer" : return new CommandeEffacer(document, parameters);
-            case "clear" : return new CommandeEffacer(document, parameters);
+            case "clear" : return new CommandeClear(document, parameters);
             default: return null;
         }
     }

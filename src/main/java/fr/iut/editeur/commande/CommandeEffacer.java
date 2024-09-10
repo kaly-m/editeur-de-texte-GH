@@ -1,6 +1,5 @@
-package fr.iut.editeur.commande.invoker;
+package fr.iut.editeur.commande;
 
-import fr.iut.editeur.commande.CommandeDocument;
 import fr.iut.editeur.document.Document;
 
 
