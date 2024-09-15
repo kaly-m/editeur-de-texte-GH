@@ -13,11 +13,14 @@ public abstract class CommandeDocument implements Commande {
         this.parameters = parameters;
     }
 
-    public abstract void CommandeExecuter();
+    /**
+     * Fonction abstraite, elle est appelée dans toutes les classes de commande pour exécuter leurs actions respectives.
+     */
+    public abstract void commandeExecuter();
 
     @Override
     public void executer() {
-        this.CommandeExecuter();
+        this.commandeExecuter();
         System.out.println(this.document);
     }
 

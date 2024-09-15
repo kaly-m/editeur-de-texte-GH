@@ -10,7 +10,7 @@ public class CommandeMajuscules extends CommandeDocument {
     }
 
     @Override
-    public void CommandeExecuter()
+    public void commandeExecuter()
     {
         if(parameters.length < 2 || parameters.length > 3) {
             System.err.println("Format attendu : majuscules;debut;fin");
@@ -21,5 +21,10 @@ public class CommandeMajuscules extends CommandeDocument {
         int fin = Integer.parseInt(parameters[2]);
 
         this.document.majuscules(debut, fin);
+    }
+
+    @Override
+    public String getDescriptionCommande(){
+        return "met le texte en majuscules";
     }
 }

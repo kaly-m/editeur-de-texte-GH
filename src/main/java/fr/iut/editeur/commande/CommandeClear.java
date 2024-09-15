@@ -8,7 +8,7 @@ public class CommandeClear extends CommandeDocument {
         super(document, parameters);
     }
 
-    public void CommandeExecuter()
+    public void commandeExecuter()
     {
         if (parameters.length > 1 )
         {
@@ -16,5 +16,10 @@ public class CommandeClear extends CommandeDocument {
             return;
         }
         this.document.clear();
+    }
+
+    @Override
+    public String getDescriptionCommande() {
+        return "Effacer le contenu du document";
     }
 }

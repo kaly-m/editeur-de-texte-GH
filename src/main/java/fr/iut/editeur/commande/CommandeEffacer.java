@@ -10,7 +10,7 @@ public class CommandeEffacer extends CommandeDocument {
     }
 
     @Override
-    public void CommandeExecuter() {
+    public void commandeExecuter() {
         if(parameters.length < 2 || parameters.length > 3) {
             System.err.println("Format attendu : effacer;debut;fin");
             return;
@@ -20,6 +20,11 @@ public class CommandeEffacer extends CommandeDocument {
         int fin = Integer.parseInt(parameters[2]);
 
         this.document.effacer(debut, fin);
+    }
+
+    @Override
+    public String getDescriptionCommande(){
+        return "efface les texte dans l'interval début/fin";
     }
     //fonctionne à  merveille
 }

@@ -5,8 +5,12 @@ import fr.iut.editeur.commande.CommandeClear;
 import fr.iut.editeur.commande.CommandeEffacer;
 import fr.iut.editeur.commande.CommandeMajuscules;
 import fr.iut.editeur.commande.CommandeRemplacer;
+import fr.iut.editeur.commande.CommandeInserer;
 import fr.iut.editeur.document.Document;
 
+/**
+ * Classe contenant tous les appels de fonctions applicables à un document
+ */
 public class CommandeFactory {
 
     private static CommandeFactory instance;
@@ -20,15 +24,24 @@ public class CommandeFactory {
 
     private CommandeFactory() {}
 
+    /**
+     * Stoque tous les appels de fonctions et permet d'appeler leur constructeur avec les informations nécessaires
+     * @param name nom de la fonction à appeler
+     * @param document document sur lequel appeler la fonction
+     * @param parameters paramètres de la fonction
+     * @return la commande créée
+     */
     public Commande createCommand(String name, Document document, String[] parameters) {
-        switch (name) {
-            case "ajouter" : return new CommandeAjouter(document, parameters);
-            case "remplacer" : return new CommandeRemplacer(document, parameters);
-            case "majuscules" : return new CommandeMajuscules(document, parameters);
-            case "effacer" : return new CommandeEffacer(document, parameters);
-            case "clear" : return new CommandeClear(document, parameters);
-            default: return null;
-        }
+        return switch (name) {
+            case "ajouter" -> new CommandeAjouter(document, parameters);
+            case "remplacer" -> new CommandeRemplacer(document, parameters);
+            case "majuscules" -> new CommandeMajuscules(document, parameters);
+            case "effacer" -> new CommandeEffacer(document, parameters);
+            case "clear" -> new CommandeClear(document, parameters);
+            case "inserer" -> new CommandeInserer(document, parameters);
+            case "minuscules" -> new CommandeMinuscules(document, parameters);
+            default -> null;
+        };
     }
 
 }
