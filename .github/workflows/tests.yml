@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: MavenTest
-        run: mvn test
+        run: mvn -f ../../pom.xml test
 
 
 
