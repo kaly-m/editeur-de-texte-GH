@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: MavenTest
-        run: mvn test
-        working-directory: ../
+        run: cd editeur-de-texte/ && mvn test
+        working-directory: ../../
 
 
 
