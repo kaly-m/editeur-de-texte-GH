@@ -1,0 +1,25 @@
+name: executer_batterie_test
+
+on: push
+
+jobs:
+  setupJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkoutDepot
+        uses: actions/checkout@v4
+
+      - name: javaVersion
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'oracle'
+
+  executeTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MavenTest
+        run: mvn test
+
+
+

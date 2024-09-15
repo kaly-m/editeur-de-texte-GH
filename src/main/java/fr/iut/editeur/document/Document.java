@@ -31,7 +31,8 @@ public class Document {
      * @param texte la chaîne de caractère à ajouter
      */
     public void ajouter(String texte) {
-        this.contentDocument += texte;
+        this.contentDocument += texte + ' ';
+
     }
 
     /**
