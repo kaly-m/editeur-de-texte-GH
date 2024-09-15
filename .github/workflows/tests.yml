@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: checkoutDepot
         uses: actions/checkout@v4
-        with:
-          repository: '{kaly-m}/{editeur-de-texte-GH}'
 
       - name: javaVersion
         uses: actions/setup-java@v4
