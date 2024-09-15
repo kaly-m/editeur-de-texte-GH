@@ -9,6 +9,12 @@ jobs:
       - name: checkoutDepot
         uses: actions/checkout@v4
 
+      - name: List directory contents
+        run: ls -R
+
+      - name: Print current directory
+        run: pwd
+        
       - name: javaVersion
         uses: actions/setup-java@v4
         with:
