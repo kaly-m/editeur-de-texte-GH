@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: MavenTest
         run: mvn test
-        working-directory: ../../
+        working-directory: ../
 
 
 
