@@ -9,7 +9,7 @@ jobs:
       - name: checkoutDepot
         uses: actions/checkout@v4
         with:
-          repository: 'editeur-de-texte-GH'
+          repository: {kaly-m}/{editeur-de-texte-GH}
 
       - name: javaVersion
         uses: actions/setup-java@v4
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: MavenTest
-        run: mvn -X test
+        run: mvn test
 
 
 
