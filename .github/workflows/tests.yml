@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: checkoutDepot
         uses: actions/checkout@v4
+        with:
+          repository: '${{ github.repository }}'
 
       - name: javaVersion
         uses: actions/setup-java@v4
@@ -19,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: MavenTest
-        run: cd && cd Documents/S3/dev/editeur-de-texte-GH/ && mvn test
+        run: mvn test
 
 
 
