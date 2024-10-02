@@ -27,3 +27,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: target/EditeurDeTexte-0.0.1.jar
+          
