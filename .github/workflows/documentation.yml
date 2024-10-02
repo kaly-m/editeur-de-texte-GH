@@ -1,5 +1,6 @@
----
-name: Documentation
+
+
+name: Génération et Publication de la Javadoc
 
 on:
   push:
@@ -10,22 +11,29 @@ permissions:
   contents: write
 
 jobs:
-  javaDoc:
-    runs-on: ubuntu-22.04
+  build-and-deploy-javadoc:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: checkoutDepot
-        uses: actions/checkout@v4
-      - name: javaVersion
-        uses: actions/setup-java@v4
+      - name: Checkout du dépôt
+        uses: actions/checkout@v3
+
+      - name: Configurer Java 17
+        uses: actions/setup-java@v3
         with:
+          distribution: 'temurin'
           java-version: '17'
-          distribution: 'oracle'
-      - name: installer maven
+
+      - name: Installer les dépendances Maven
         run: mvn install --quiet
-      - name: génération javadoc
-        run: mvn javadoc::javadoc
-      - name: publication
+
+      - name: Générer la Javadoc
+        run: mvn javadoc:javadoc
+
+      - name: Publier la Javadoc sur GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          publish_dir: './taget/reports/apidocs'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/apidocs
+          # Optionnel: Vous pouvez spécifier la branche de destination si nécessaire
+          # destination_branch: gh-pages
