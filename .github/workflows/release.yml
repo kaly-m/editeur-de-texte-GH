@@ -1,3 +1,4 @@
+---
 name: Release
 
 on:
@@ -21,7 +22,9 @@ jobs:
           distribution: 'oracle'
       - name: build Maven
         run: mvn install
-      - name: executable .jar
+      - name: version
+        run: mvn versions:set -DnewVersion=${{ github.ref_name }} -DgenerateBackupPoms=false
+      - name: package
         run: mvn package
       - name: création release
         uses: softprops/action-gh-release@v2
