@@ -7,21 +7,21 @@ jobs:
   setupJob:
     runs-on: ubuntu-22.04
     steps:
-      - name: checkoutDepot
-        uses: actions/checkout@v4
-      - name: javaVersion
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'oracle'
+    - name: checkoutDepot
+      uses: actions/checkout@v4
+    - name: javaVersion
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'oracle'
 
   executeTest:
     runs-on: ubuntu-latest
     steps:
-      - name: build Maven
-        run: mvn install
-      - name: MavenTest
-        run: mvn test
+    - name: build Maven
+      run: mvn install
+    - name: MavenTest
+      run: mvn test
 
 
 
