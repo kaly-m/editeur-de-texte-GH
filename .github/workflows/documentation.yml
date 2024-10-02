@@ -1,13 +1,14 @@
 ---
 name: Documentation
 
-permissions:
-  contents: write
-
 on:
   push:
     branches:
       - 'master'
+
+permissions:
+  contents: write
+  
 jobs:
   javaDoc:
     runs-on: ubuntu-22.04
