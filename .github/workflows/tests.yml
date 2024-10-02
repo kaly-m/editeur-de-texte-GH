@@ -1,27 +1,29 @@
 ---
-name: Java CI
+name: executer_batterie_test
 
-on:
-  push:
-    branches:
-      - '*'
+on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-22.04
-
+  setupJob:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkoutDepot
         uses: actions/checkout@v4
-
-      - name: Set up JDK 17
+      - name: javaVersion
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'oracle'
 
-      - name: Build with Maven
+  executeTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build Maven
         run: mvn install
-
-      - name: Run tests
+      - name: MavenTest
         run: mvn test
+
+
+
+
+
