@@ -17,10 +17,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'oracle'
-
-  executeTest:
-    runs-on: ubuntu-22.04
-    steps:
     - name: build Maven
       run: mvn install
     - name: MavenTest
