@@ -1,7 +1,10 @@
 ---
 name: executer_batterie_test
 
-on: push
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
   setupJob:
