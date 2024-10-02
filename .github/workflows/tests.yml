@@ -19,7 +19,7 @@ jobs:
         distribution: 'oracle'
 
   executeTest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: build Maven
       run: mvn install
