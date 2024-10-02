@@ -29,5 +29,6 @@ jobs:
       - name: création release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.ref_name }}
           files: target/EditeurDeTexte-${{ github.ref_name }}.jar
           
