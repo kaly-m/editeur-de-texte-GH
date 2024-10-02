@@ -5,7 +5,7 @@ on: push
 
 jobs:
   setupJob:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: checkoutDepot
         uses: actions/checkout@v4
