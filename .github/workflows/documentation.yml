@@ -1,0 +1,28 @@
+---
+name: Documentation
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  javaDoc:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkoutDepot
+        uses: actions/checkout@v4
+      - name: javaVersion
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'oracle'
+      - name: génération javadoc
+        run: mvn javadoc::javadoc
+      - name: publication
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          publish_dir: './taget/reports/apidocs'
