@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkoutDepot
+        uses: actions/checkout@v4
+      - name: javaVersion
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'oracle'
+      - name: build Maven
+        run: mvn install
+      - name: executable .jar
+        run: mvn package
+      - name: création release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/EditeurDeTexte-0.0.1.jar
