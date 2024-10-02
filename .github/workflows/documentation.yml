@@ -20,6 +20,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'oracle'
+      - name: installer maven
+        run: mvn install --quiet
       - name: génération javadoc
         run: mvn javadoc::javadoc
       - name: publication
